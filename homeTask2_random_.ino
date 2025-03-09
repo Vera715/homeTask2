@@ -1,6 +1,11 @@
 #include <FastLED.h>
 #define NUM_LEDS 54
 #define DATA_PIN 9
+int start = 0;
+int end = 255;
+int r;
+int g;
+int b;
 CRGB leds[NUM_LEDS];
 void setup() {
   Serial.begin(9600);
@@ -10,11 +15,9 @@ void setup() {
 void loop() {
   for (int i = 0; i < NUM_LEDS; i++ )
   {
-    int start = 0;
-    int end = 255;
-    int r = rand() % (end - start + 1) + start;
-    int g = rand() % (end - start + 1) + start;
-    int b = rand() % (end - start + 1) + start;
+   r = rand() % (end - start + 1) + start;
+   g = rand() % (end - start + 1) + start;
+   b = rand() % (end - start + 1) + start;
     leds[i] = CRGB(r, g, b);
     FastLED.show();
     delay(150);
