@@ -8,7 +8,7 @@ void setup() {
 }
 
 void loop() {
-  for (int i = 0; i < 54; i++ )
+  for (int i = 0; i < NUM_LEDS; i++ )
   {
     int start = 0;
     int end = 255;
@@ -19,7 +19,7 @@ void loop() {
     FastLED.show();
     delay(150);
   }
-  for (int i = 54; i >= 0; i--)
+  for (int i = NUM_LEDS; i >= 0; i--)
   {
     leds[i] = CRGB(0, 0, 0);
     FastLED.show();
